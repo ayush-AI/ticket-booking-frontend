@@ -12,7 +12,7 @@ function App() {
 
   const fetchSeats = async () => {
     try{
-      const response = await fetch('http://localhost:8000/seats');
+      const response = await fetch('https://ticket-booking-backend-production.up.railway.app/seats');
       const data = await response.json();
       setSeats(data);
     }
@@ -24,7 +24,7 @@ function App() {
 
   const bookSeats = async () => {
     try {
-      const response = await fetch('http://localhost:8000/book', {
+      const response = await fetch('https://ticket-booking-backend-production.up.railway.app/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ numberOfSeats }),
